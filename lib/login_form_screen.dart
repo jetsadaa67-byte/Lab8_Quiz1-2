@@ -9,12 +9,8 @@ class LoginFormScreen extends StatefulWidget {
 
 class _LoginFormScreenState extends State<LoginFormScreen> {
 
-  // แบบฝึกหัดที่ 1
-  // สร้าง GlobalKey สำหรับ Form
   final _formKey = GlobalKey<FormState>();
 
-  // แบบฝึกหัดที่ 2
-  // Controllers สำหรับ Email และ Password
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
 
@@ -22,14 +18,12 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
   void initState() {
     super.initState();
 
-    // สร้าง Controllers
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
   }
 
   @override
   void dispose() {
-    // คืน resource ของ Controllers
     _emailController.dispose();
     _passwordController.dispose();
 
@@ -62,7 +56,6 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
 
               const SizedBox(height: 20),
 
-              // ช่อง Email
               TextFormField(
                 controller: _emailController,
 
@@ -75,13 +68,10 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
 
                 keyboardType: TextInputType.emailAddress,
 
-                // validator จะเพิ่มในแบบฝึกหัดที่ 3
-                // onSaved จะเพิ่มในแบบฝึกหัดที่ 4
               ),
 
               const SizedBox(height: 15),
 
-              // ช่อง Password
               TextFormField(
                 controller: _passwordController,
 
@@ -94,13 +84,10 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
 
                 obscureText: true,
 
-                // validator จะเพิ่มในแบบฝึกหัดที่ 3
-                // onSaved จะเพิ่มในแบบฝึกหัดที่ 4
               ),
 
               const SizedBox(height: 30),
 
-              // ปุ่ม Submit จะเพิ่มในแบบฝึกหัดที่ 3
             ],
           ),
         ),
